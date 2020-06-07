@@ -1,0 +1,30 @@
+// Set your brand colors
+$pink: #fa7c91;
+$brown: #757763;
+$beige-light: #d0d1cd;
+$beige-lighter: #eff0eb;
+
+// Update Bulma's global variables
+$grey-dark: $brown;
+$grey-light: $beige-light;
+$link: $pink;
+$widescreen-enabled: false;
+$fullhd-enabled: false;
+
+// Update some of Bulma's component variables
+// $body-background-color: $beige-lighter;
+$body-background-color: #fff;
+$control-border-width: 2px;
+$input-border-color: transparent;
+$input-shadow: none;
+
+// Import only what you need from Bulma
+@import 'bulma/sass/utilities/_all';
+@import 'bulma/sass/base/_all';
+@import 'bulma/sass/elements/button';
+@import 'bulma/sass/elements/container';
+@import 'bulma/sass/elements/title';
+@import 'bulma/sass/form/_all';
+@import 'bulma/sass/components/navbar';
+@import 'bulma/sass/layout/hero';
+@import 'bulma/sass/layout/section';

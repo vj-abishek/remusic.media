@@ -1,21 +1,16 @@
-import React from 'react'
-import './App.css'
+import React from 'react';
+import './styles/styles.scss';
 
 function App() {
   return (
-    <div className='App'>
-      <header className='App-header'>
-        <a
-          className='App-link'
-          href='https://reactjs.org'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App">
+      <h1 className="title">Hello world</h1>
+      <button className="button is-primary" type="button">
+        Hello world
+      </button>
+      <div className="home_page">He</div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
