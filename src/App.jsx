@@ -3,12 +3,14 @@ import './styles/styles.scss';
 
 function App() {
   return (
-    <div className="App">
-      <h1 className="title">Hello world</h1>
-      <button className="button is-primary" type="button">
+    <div className="container">
+      <h1 className="title is-success">Hello world</h1>
+      <button className="button is-success" type="button">
         Hello world
       </button>
-      <div className="home_page">He</div>
+      <div>
+        <a href="https://google.com">hero</a>
+      </div>
     </div>
   );
 }
