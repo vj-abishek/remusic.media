@@ -2,14 +2,14 @@
 
 // Set your brand colors
 $purple: #10044a;
-$pink: #fa7c91;
+$pink: #ee2964;
 $brown: #757763;
 $beige-light: #d0d1cd;
 $beige-lighter: #eff0eb;
+$pink-dark: #b91f4d;
 
 // Update Bulma's global variables
-$family-primary:'Varela Round',
-sans-serif;
+$family-primary: 'Varela Round', sans-serif;
 $grey-dark: $brown;
 $grey-light: $beige-light;
 $primary: $purple;
@@ -23,12 +23,474 @@ $input-border-color: transparent;
 $input-shadow: none;
 
 // Import only what you need from Bulma
-@import 'bulma/sass/utilities/_all';
-@import 'bulma/sass/base/_all';
-@import 'bulma/sass/elements/button';
-@import 'bulma/sass/elements/container';
-@import 'bulma/sass/elements/title';
-@import 'bulma/sass/form/_all';
-@import 'bulma/sass/components/navbar';
-@import 'bulma/sass/layout/hero';
-@import 'bulma/sass/layout/section';
+@import 'bulma/sass/utilities/_all.sass';
+@import 'bulma/sass/base/_all.sass';
+@import 'bulma/sass/elements/button.sass';
+@import 'bulma/sass/elements/container.sass';
+@import 'bulma/sass/elements/title.sass';
+@import 'bulma/sass/form/_all.sass';
+@import 'bulma/sass/components/navbar.sass';
+// @import 'bulma/sass/layout/hero';
+// @import 'bulma/sass/layout/section';
+
+// importatn main styling
+.mainClass {
+  display: flex;
+}
+
+.myContainer {
+  background-color: $pink;
+  transition: background 0.75s ease-out;
+}
+
+.display {
+  display: none;
+}
+.nav_main {
+  width: 130px;
+  height: 100vh;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background-color: rgb(4, 3, 6);
+  text-align: center;
+  z-index: 99;
+}
+
+.vidoiContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.paddingLeftIS {
+  padding-left: 130px;
+}
+
+.podcastColor {
+  background-color: rgb(41, 58, 51);
+  transition: background 0.75s ease-out;
+}
+
+.hideME {
+  display: block;
+}
+.video_contaiern_for_blah {
+  width: 100%;
+  height: auto;
+  max-width: 320px;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1);
+  background: #ebebeb;
+  border-bottom: 1px solid pink;
+  color: #000;
+}
+
+.marginLeft {
+  margin-left: 10px;
+}
+.margin {
+  margin: 10px;
+}
+
+.flex_me {
+  display: flex;
+  border-radius: 4px;
+  padding: 0 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 10px;
+  align-items: center;
+  width: inherit;
+  cursor: pointer;
+  height: inherit;
+  transition: 0.55s background;
+
+  &:hover {
+    background-color: $pink-dark;
+  }
+
+  .text {
+    color: #fff;
+    font-family: $family-primary;
+    font-size: 10px;
+  }
+  span {
+    margin-left: 10px;
+  }
+}
+
+.active {
+  background-color: $pink-dark;
+}
+
+.text_decoration {
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  position: relative;
+  padding-left: 10px;
+  margin: 15px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0px;
+    background-color: $pink;
+    width: 4px;
+    border-radius: 10px;
+    height: 100%;
+  }
+}
+
+.outer {
+  display: flex;
+  flex-direction: row;
+  overflow: auto;
+}
+
+.podcast {
+  position: relative;
+  padding: 20px 20px 16px;
+  color: #fff;
+  background: #003480;
+  border-radius: 8px;
+  isolation: isolate;
+  // min-width: 190px;
+  // max-width: 250px;
+  width: 190px;
+  margin-left: 10px;
+
+  .both {
+    height: 100%;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .image {
+    width: 100%;
+    position: relative;
+    margin-bottom: 16px;
+    background-color: #333;
+    -webkit-box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.3),
+      0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.3), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  img {
+    border-radius: 8px;
+  }
+}
+
+.VideoContainer {
+  margin: 15px;
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.Text_podcast {
+  padding: 0.08em 0px;
+  font-size: 2.5rem;
+  line-height: 48px;
+  visibility: visible;
+  color: #fff;
+  margin-left: 20px;
+  padding-top: 120px;
+}
+
+.artist {
+  font-size: 24px;
+  line-height: 28px;
+  color: #fff;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.image_podacst {
+  display: flex;
+}
+
+.podcastMain {
+  display: flex;
+  align-items: center;
+}
+
+.episodesContainer {
+  width: 100%;
+  background: #000;
+
+  h1 {
+    margin-left: 10px;
+    font-weight: 600;
+    color: #fff;
+    font-size: 19px;
+    padding: 10px;
+  }
+}
+
+.wholeContainer {
+  padding: 15px;
+  margin: auto;
+}
+
+.podcastAuioContainer {
+  width: 100%;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #181818, #000);
+  margin-bottom: 10px;
+  padding: 10px;
+
+  h2 {
+    margin-left: 10px;
+  }
+
+  time {
+    margin-left: 10px;
+    font-size: 12px;
+  }
+}
+
+.imageNtitleFlex {
+  display: flex;
+  padding: 10px;
+
+  img {
+    width: 60px;
+    height: 60px;
+  }
+
+  div {
+    color: #fff;
+    padding-left: 10px;
+    font-size: 16px;
+  }
+}
+
+.mini {
+  width: 100vw;
+  height: 45px;
+  box-shadow: rgba(0, 0, 0, 0.1) -12px -8px 12px;
+  position: fixed;
+  z-index: 10;
+  bottom: 50px;
+  display: flex;
+  background-color: $pink-dark;
+
+  .mini_image_container {
+    cursor: pointer;
+  }
+
+  .ark_work {
+    width: 45px;
+    height: 45px;
+    flex: 1;
+
+    .placeholder {
+      width: 45px;
+      height: 45px;
+      background: url(https://a10.gaanacdn.com/images/gaanawebsite/defaultartwork.svg)
+        no-repeat 50% #003480;
+      background-size: 15px;
+    }
+  }
+
+  .mini_title {
+    flex: 1;
+    color: #fff;
+    // line-height: 45px;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: transparent;
+    border: 0px;
+    outline: none;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 45px;
+    margin-left: 10px;
+
+    span:last-child {
+      font-size: 10px;
+      color: #c7c7c7;
+    }
+
+    span {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  }
+
+  .mini_play_pause {
+    height: 45px;
+    line-height: 45px;
+
+    .button {
+      background-color: transparent;
+      border: 0px;
+      line-height: 50px;
+      vertical-align: middle;
+      outline: none;
+    }
+  }
+}
+
+.porfile_header {
+  height: 60vh;
+  background: linear-gradient($pink, $purple);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  .image_con {
+    width: 232px;
+    box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.3), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    height: 232px;
+    border-radius: 50%;
+    background-color: $purple;
+  }
+
+  h1 {
+    color: #fff;
+    padding-top: 10px;
+    font-size: 2rem;
+  }
+  h6 {
+    color: #ebebeb;
+    font-size: 10px;
+  }
+}
+
+.text_colorPadding {
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+// Responsive styles
+
+@media (max-width: 768px) {
+  .podcastMain {
+    flex-wrap: wrap;
+  }
+
+  .text_Container_podcast {
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    h1 {
+      padding-top: 0px;
+    }
+  }
+
+  .image_podacst {
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 425px) {
+  .Text_podcast {
+    font-size: 1.5rem;
+    margin-left: -10px;
+  }
+
+  .artist {
+    font-size: 22px;
+    margin-left: -5px;
+  }
+}
+
+@media (max-width: 320px) {
+  .Text_podcast {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .porfile_header {
+    h1 {
+      font-size: 3rem;
+    }
+    h6 {
+      font-size: 1rem;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .main_for_laptop {
+    margin-left: 232px;
+  }
+  .bottomNAv_forLaptop {
+    height: 100vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .mainClass {
+    flex-direction: column;
+  }
+  .nav_main {
+    top: auto;
+    bottom: 0px;
+    right: 0px;
+    width: 100%;
+    min-height: 50px;
+    height: 50px;
+  }
+  .paddingLeftIS {
+    padding-left: 0px;
+  }
+  .hideME {
+    display: none;
+  }
+  .flex_me {
+    display: flex;
+    flex-direction: row;
+    width: calc(100% / 3);
+  }
+  .flexMAin {
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    justify-content: space-around;
+  }
+  .display {
+    display: block;
+  }
+  .marginLeft {
+    margin-left: 0px;
+  }
+  .video_contaiern_for_blah {
+    max-width: 100%;
+  }
+  .margin {
+    margin: 0px;
+    margin-bottom: 5px;
+  }
+}

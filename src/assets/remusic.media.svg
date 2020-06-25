@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="43.436752mm"
+   height="10.580107mm"
+   viewBox="0 0 43.436753 10.580106"
+   version="1.1"
+   id="svg8"
+   sodipodi:docname="remusic.media.svg"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+  <defs
+     id="defs2">
+    <linearGradient
+       id="linearGradient5107"
+       inkscape:collect="always">
+      <stop
+         id="stop5103"
+         offset="0"
+         style="stop-color:#000080;stop-opacity:1;" />
+      <stop
+         id="stop5105"
+         offset="1"
+         style="stop-color:#0066ff;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient
+       x1="0.5"
+       x2="0.5"
+       y1="0.97078216"
+       y2="0"
+       id="jsc_s_2">
+      <stop
+         offset="0%"
+         stop-color="#0062E0"
+         id="stop4550" />
+      <stop
+         offset="100%"
+         stop-color="#19AFFF"
+         id="stop4552" />
+    </linearGradient>
+    <linearGradient
+       id="jsc_s_2-7"
+       y2="0"
+       y1="0.97078216"
+       x2="0.5"
+       x1="0.5">
+      <stop
+         id="stop3713"
+         stop-color="#0062E0"
+         offset="0%" />
+      <stop
+         id="stop3715"
+         stop-color="#19AFFF"
+         offset="100%" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#jsc_s_2"
+       id="linearGradient3737"
+       x1="17.94993"
+       y1="34.850945"
+       x2="17.94993"
+       y2="0"
+       gradientTransform="matrix(0.29480151,0,0,0.29316373,111.125,98.184524)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#jsc_s_2"
+       id="linearGradient5042"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.29480151,0,0,0.29316373,81.003725,69.15638)"
+       x1="17.94993"
+       y1="34.850945"
+       x2="17.94993"
+       y2="0" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient5107"
+       id="linearGradient5088"
+       gradientUnits="userSpaceOnUse"
+       x1="120.29234"
+       y1="92.034386"
+       x2="125.5573"
+       y2="99.867798"
+       gradientTransform="translate(8.1714112,-3.2769349)" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="5.6568542"
+     inkscape:cx="50.419349"
+     inkscape:cy="28.298213"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-108.91299,-79.940495)">
+    <g
+       id="g5146"
+       inkscape:export-xdpi="120.00004"
+       inkscape:export-ydpi="120.00004"
+       transform="translate(-14.68646,-8.6060788)">
+      <path
+         id="path5078"
+         d="m 128.00917,99.071105 c -2.49884,-0.44097 -4.40972,-2.616426 -4.40972,-5.232865 0,-2.91042 2.38125,-5.291666 5.29167,-5.291666 2.91041,0 5.29166,2.381246 5.29166,5.291666 0,2.616439 -1.91088,4.791895 -4.40972,5.232865 l -0.29398,-0.23518 h -1.17593 z"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient5088);fill-opacity:1;stroke-width:0.29398149" />
+      <g
+         id="g5086"
+         data-name="Layer 2"
+         transform="matrix(0.26458333,0,0,0.26458333,125.50686,91.035709)"
+         style="fill:#ffffff">
+        <path
+           id="path5080"
+           d="m 27.1,11.13 h -7 v 12.36 a 7.1,7.1 0 0 1 -5.39,6.88 6.77,6.77 0 0 1 -1.7,0.21 A 7.0900018,7.0900018 0 1 1 13,16.4 a 6.77,6.77 0 0 1 1.7,0.21 7,7 0 0 1 3.39,2 V 2.14 Z"
+           inkscape:connector-curvature="0"
+           style="fill:#ffffff" />
+        <path
+           id="path5082"
+           d="m 27.1,11.13 h -7 v 12.36 a 7.1,7.1 0 0 1 -5.39,6.88 V 16.61 a 7,7 0 0 1 3.39,2 V 2.14 Z"
+           inkscape:connector-curvature="0"
+           style="fill:#ffffff" />
+        <path
+           id="path5084"
+           d="M 17.08,1.42 V 17.84 A 7.08,7.08 0 0 0 4.9,22.77 c 0,0.16 0,0.31 0,0.46 h 2 c 0,-0.15 0,-0.3 0,-0.46 a 5.16,5.16 0 1 1 0.59,2.34 H 5.3 A 7.09,7.09 0 0 0 19.08,22.77 V 10.4 h 7 z m 2,4.83 2.16,2.15 h -2.16 z"
+           inkscape:connector-curvature="0"
+           style="fill:#ffffff" />
+      </g>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:5.97569323px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.14939231"
+       x="121.49673"
+       y="87.333908"
+       id="text5150"
+       inkscape:export-xdpi="120.00004"
+       inkscape:export-ydpi="120.00004"><tspan
+         sodipodi:role="line"
+         id="tspan5148"
+         x="121.49673"
+         y="87.333908"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#ffffff;stroke-width:0.14939231">REMUSIC</tspan></text>
+  </g>
+</svg>

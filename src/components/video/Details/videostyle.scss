@@ -1,0 +1,13 @@
+@import '~video-react/styles/scss/video-react';
+
+.player-wrapper {
+  position: relative;
+  padding-top: calc(55% * 9 / 16);
+  /* Player ratio: 100 / (1280 / 720) */
+}
+
+.react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
