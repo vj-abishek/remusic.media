@@ -43,6 +43,7 @@ export default function Mini({
                 src={playerJson.artwork_url}
                 width="45px"
                 height="45px"
+                style={{ padding: '5px' }}
                 alt=""
               />
             ) : (
