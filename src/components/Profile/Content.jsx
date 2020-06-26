@@ -3,6 +3,8 @@ import React from 'react';
 export default function Content() {
   return (
     <div className="text_colorPadding">
+      <h1 className="white">Testimony</h1>
+
       <span>
         Praise the lord!! My aim is to praise the Lord by singing songs.
         Everyone should prepare for the final days

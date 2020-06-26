@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { Helmet } from 'react-helmet';
 import Text from './Text';
 import VideoContainer from './Videocontainer';
 import { primary as get } from '../../store/action/primaryActions';
@@ -26,6 +27,10 @@ const Video = ({ createME, data: uploadedVideos, recent }) => {
       animate="visible"
       variants={variants}
     >
+      <Helmet>
+        <title>Remusic Media - Watch videos</title>
+        <link rel="canonical" href="https://remusic.media/" />
+      </Helmet>
       <Text>RECENT UPLOADS</Text>
       {recent && (
         <div className="marginLeft">

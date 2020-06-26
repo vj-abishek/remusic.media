@@ -354,7 +354,9 @@ $input-shadow: none;
 }
 
 .porfile_header {
-  height: 60vh;
+  min-height: 60vh;
+  padding-top:10px;
+  max-height: auto;
   background: linear-gradient($pink, $purple);
   width: 100%;
   display: flex;
@@ -383,8 +385,23 @@ $input-shadow: none;
 
 .text_colorPadding {
   color: #fff;
-  padding: 10px;
+  padding: 30px;
   text-align: center;
+  min-width:320px;
+  margin:auto;
+}
+
+.social{
+  display: flex;
+  flex-direction: row;
+
+  .white{
+    color:#fff
+  }
+
+  i{
+    font-size:25px;
+  }
 }
 
 // Responsive styles
