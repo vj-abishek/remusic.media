@@ -77,9 +77,10 @@ $input-shadow: none;
 .video_contaiern_for_blah {
   width: 100%;
   height: auto;
+  min-height: 180px;
   max-width: 320px;
   box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1);
-  background: #ebebeb;
+  background: #d0d1cd;
   border-bottom: 1px solid pink;
   color: #000;
 }
@@ -179,6 +180,7 @@ $input-shadow: none;
 
   .image {
     width: 100%;
+    min-height: 150px;
     position: relative;
     margin-bottom: 16px;
     background-color: #333;

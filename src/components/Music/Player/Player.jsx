@@ -4,6 +4,8 @@ import AudioPlayer from 'react-h5-audio-player';
 import { connect } from 'react-redux';
 import { PlaynPause, SetPlayerRef } from '../../../store/action/style';
 import './player.scss';
+import poster512 from '../../../assets/podcast512x512.png';
+import poster256 from '../../../assets/podcast256x256.png';
 
 const Player = ({ playerJson, PlaynPauseFunc, SetPlayerRefFunc }) => {
   const PlayerRef = useRef(null);
@@ -44,7 +46,40 @@ const Player = ({ playerJson, PlaynPauseFunc, SetPlayerRefFunc }) => {
         src={playerJson.audio_url}
         onPlay={() => {
           PlaynPauseFunc(true);
+          const skipTime = 10;
+          // set mediaSession
+          if ('mediaSession' in navigator) {
+            /* eslint-disable-next-line */
+            navigator.mediaSession.metadata = new MediaMetadata({
+              title: playerJson.title,
+              artist: 'Elisha Kumar',
+              album: 'AgniSwaram',
+              // artwork: [{ src: playerJson.artwork_url }],
+              artwork: [
+                { src: poster256, sizes: '256x256', type: 'image/png' },
+                { src: poster512, sizes: '512x512', type: 'image/png' },
+              ],
+            });
 
+            navigator.mediaSession.setActionHandler('play', () => {
+              PlayerRef.current.audio.current.play();
+            });
+            navigator.mediaSession.setActionHandler('pause', () => {
+              PlayerRef.current.audio.current.pause();
+            });
+            navigator.mediaSession.setActionHandler('seekbackward', () => {
+              PlayerRef.current.audio.current.currentTime = Math.max(
+                PlayerRef.current.audio.current.currentTime - skipTime,
+                0,
+              );
+            });
+            navigator.mediaSession.setActionHandler('seekforward', () => {
+              PlayerRef.current.audio.current.currentTime = Math.min(
+                PlayerRef.current.audio.current.currentTime + skipTime,
+                PlayerRef.current.audio.current.duration,
+              );
+            });
+          }
           SetPlayerRefFunc(PlayerRef);
         }}
         onPause={() => {
@@ -54,8 +89,7 @@ const Player = ({ playerJson, PlaynPauseFunc, SetPlayerRefFunc }) => {
         }}
         customAdditionalControls={[]}
         customVolumeControls={[]}
-        showSkipControls
-        showJumpControls={false}
+        showSkipControls={false}
         // layout="stacked-reverse"
         // other props here
       />

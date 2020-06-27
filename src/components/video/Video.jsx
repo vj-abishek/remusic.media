@@ -33,7 +33,12 @@ const Video = ({ createME, data: uploadedVideos, recent }) => {
       </Helmet>
       <Text>RECENT UPLOADS</Text>
       {recent && (
-        <div className="marginLeft">
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={variants}
+          className="marginLeft"
+        >
           <VideoContainer
             id={recent.id}
             thumbnail={recent.thumbnail_photo}
@@ -41,10 +46,15 @@ const Video = ({ createME, data: uploadedVideos, recent }) => {
             title={recent.title}
             time={recent.time}
           />
-        </div>
+        </motion.div>
       )}
       <Text>ALL VIDEOS</Text>
-      <div className="vidoiContainer">
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={variants}
+        className="vidoiContainer"
+      >
         {uploadedVideos &&
           uploadedVideos.map((da) => {
             const {
@@ -64,7 +74,7 @@ const Video = ({ createME, data: uploadedVideos, recent }) => {
               />
             );
           })}
-      </div>
+      </motion.div>
       <br />
       <br />
       <br />
