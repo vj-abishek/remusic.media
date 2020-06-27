@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { connect } from 'react-redux';
+import { Helmet } from 'react-helmet';
 import {
   Player,
   BigPlayButton,
@@ -20,6 +21,9 @@ const Details = ({ single, id, getByid }) => {
   const [descriptions, setDescription] = useState('');
   const [times, setTime] = useState();
   const [loading, setLoading] = useState(true);
+
+  // player ref
+  const PlayerRef = useRef(null);
 
   // GET the data
   useEffect(() => {
@@ -56,6 +60,19 @@ const Details = ({ single, id, getByid }) => {
   // when single is found in the library
   useEffect(() => {}, [single, url, poster, titles, descriptions, times]);
 
+  const handShare = async () => {
+    const shareData = {
+      title: { titles },
+      text: `Watch ${titles} exclusive on only https://remusic.media`,
+      url: `https://remusic.media/watch${id}`,
+    };
+    try {
+      await navigator.share(shareData);
+    } catch (err) {
+      console.log('Cannot share', err);
+    }
+  };
+
   return loading ? (
     <div
       style={{
@@ -68,8 +85,46 @@ const Details = ({ single, id, getByid }) => {
     />
   ) : (
     <>
+      <Helmet>
+        <title>{`${titles} - Now Playing`}</title>
+        <meta property="og:image" content={poster} />
+        <meta property="og:image:secure_url" content={poster} />
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:width" content="400" />
+        <meta property="og:image:height" content="300" />
+        <meta property="og:image:alt" content={titles} />
+      </Helmet>
       <div style={{ maxWidth: '680px', maxHeight: '380px' }}>
-        <Player poster={poster} className="player-wrapper" autoPlay src={url}>
+        <Player
+          ref={PlayerRef}
+          poster={poster}
+          className="player-wrapper"
+          autoPlay
+          src={url}
+          onPlay={() => {
+            // set mediaSession
+            if ('mediaSession' in navigator) {
+              /* eslint-disable-next-line */
+              navigator.mediaSession.metadata = new MediaMetadata({
+                title: titles,
+                artwork: [{ src: poster }],
+              });
+
+              navigator.mediaSession.setActionHandler('play', () => {
+                PlayerRef.current.play();
+              });
+              navigator.mediaSession.setActionHandler('pause', () => {
+                PlayerRef.current.pause();
+              });
+              navigator.mediaSession.setActionHandler('seekbackward', () => {
+                PlayerRef.current.seek(10);
+              });
+              navigator.mediaSession.setActionHandler('seekforward', () => {
+                PlayerRef.current.forward(10);
+              });
+            }
+          }}
+        >
           <BigPlayButton position="center" />
           <ControlBar autoHide={false}>
             <ReplayControl seconds={10} order={1} />
@@ -90,6 +145,28 @@ const Details = ({ single, id, getByid }) => {
           <time style={{ fontSize: '10px' }}>
             Uploaded - {moment(times).from()}
           </time>
+          <div>
+            <button
+              type="button"
+              onClick={handShare}
+              className="inline_sharing"
+            >
+              <div>
+                <svg
+                  fill="#fff"
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  width="24"
+                >
+                  <path d="M0 0h24v24H0V0z" fill="none" />
+                  <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92zM18 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM6 13c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm12 7.02c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z" />
+                </svg>
+              </div>
+
+              <span>Share</span>
+            </button>
+          </div>
         </div>
       </div>
     </>

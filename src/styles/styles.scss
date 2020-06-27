@@ -303,6 +303,7 @@ $input-shadow: none;
     .placeholder {
       width: 45px;
       height: 45px;
+      border-radius: 10px;
       background: url(https://a10.gaanacdn.com/images/gaanawebsite/defaultartwork.svg)
         no-repeat 50% #003480;
       background-size: 15px;
@@ -312,8 +313,6 @@ $input-shadow: none;
   .mini_title {
     flex: 1;
     color: #fff;
-    // line-height: 45px;
-
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -327,7 +326,6 @@ $input-shadow: none;
     justify-content: center;
     align-items: flex-start;
     height: 45px;
-    margin-left: 10px;
 
     span:last-child {
       font-size: 10px;
@@ -353,6 +351,15 @@ $input-shadow: none;
       outline: none;
     }
   }
+}
+.inline_sharing{
+  font-size:14px;
+  padding: 10px;
+  background: transparent;
+  font-size: 14px;
+  color: #fff;
+  border: 0px;
+  outline:none;
 }
 
 .porfile_header {

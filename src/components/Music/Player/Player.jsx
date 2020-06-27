@@ -2,6 +2,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import AudioPlayer from 'react-h5-audio-player';
 import { connect } from 'react-redux';
+import { Helmet } from 'react-helmet';
 import { PlaynPause, SetPlayerRef } from '../../../store/action/style';
 import './player.scss';
 import poster512 from '../../../assets/podcast512x512.png';
@@ -28,6 +29,12 @@ const Player = ({ playerJson, PlaynPauseFunc, SetPlayerRefFunc }) => {
 
   return (
     <div className="music_player" style={{ display: `${display}` }}>
+      <Helmet>
+        <meta property="og:audio" content={playerJson.audio_url} />
+        <meta property="og:audio:secure_url" content={playerJson.audio_url} />
+        <meta property="og:audio:type" content="audio/mpeg" />
+        <title>{`${playerJson.title} - Now Playing`}</title>
+      </Helmet>
       <header>Now Playing</header>
       <div className="poster_photo">
         <img
