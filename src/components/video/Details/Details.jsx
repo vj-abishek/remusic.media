@@ -64,7 +64,7 @@ const Details = ({ single, id, getByid }) => {
     const shareData = {
       title: { titles },
       text: `Watch ${titles} on Remusic Media.`,
-      url: `https://remusic.media/watch/${id}`,
+      url: `https://remusic.media/${id}`,
     };
     try {
       await navigator.share(shareData);
