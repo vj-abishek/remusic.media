@@ -9,7 +9,7 @@ const Episodes = ({ setStyle, Music }) => {
   const [value, setValue] = useState();
 
   useEffect(() => {
-    fetch('https://agniswaram.now.sh/api/podcast')
+    fetch('https://remusic.media/api/podcast')
       .then((res) => res.json())
       .then((data) => {
         setValue(data);
