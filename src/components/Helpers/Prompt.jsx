@@ -17,10 +17,10 @@ export default function Prompt(props) {
           </div>
           <div className="PromptText">
             <h2 className="_7UhW9  x-6xq  yUEEX KV-D4 uL8Hv">
-              Add SafeShare to your Home screen?
+              Add Remusic to your Home screen?
             </h2>
             <div className="_7UhW9   xLCgt      MMzan   _0PwGv       uL8Hv         ">
-              Get to Safeshare quickly and easily by adding it to your Home
+              Get to Remusic quickly and easily by adding it to your Home
               screen.
             </div>
           </div>
