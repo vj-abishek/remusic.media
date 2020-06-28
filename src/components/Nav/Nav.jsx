@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Logo from '../../assets/remusic.media.svg';
+import Logo from '../../assets/remusic50.png';
 
 const Nav = ({ isPodcast }) => {
   return (
@@ -13,7 +13,7 @@ const Nav = ({ isPodcast }) => {
       aria-label="main navigation"
     >
       <div className="navbar-brand container">
-        <a className="navbar-item" href="/">
+        <a style={{ paddingTop: '10px' }} className="navbar-item" href="/">
           <img src={Logo} alt="Remusic.media LOGO" />
         </a>
       </div>
