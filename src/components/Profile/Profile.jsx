@@ -1,11 +1,21 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import { motion } from 'framer-motion';
 import Header from './Header';
 import Content from './Content';
 
+const variants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+  },
+};
+
 export default function Profile() {
   return (
-    <>
+    <motion.div initial="hidden" animate="visible" variants={variants}>
       <Helmet>
         <meta charSet="utf-8" />
         <title>Elisha Kumar - Profile</title>
@@ -23,6 +33,6 @@ export default function Profile() {
       <br />
       <br />
       <br />
-    </>
+    </motion.div>
   );
 }
