@@ -3,16 +3,14 @@ import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
-import { getFirestore } from 'redux-firestore';
-import { getFirebase } from 'react-redux-firebase';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import App from './App';
-// import config from './config/fb'
 import * as serviceWorker from './serviceWorker';
 import rootReducer from './store/reducers/rootReducer';
 
 const store = createStore(
   rootReducer,
-  applyMiddleware(thunk.withExtraArgument({ getFirebase, getFirestore })),
+  composeWithDevTools(applyMiddleware(thunk)),
 );
 ReactDOM.render(
   <React.StrictMode>

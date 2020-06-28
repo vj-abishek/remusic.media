@@ -7,7 +7,8 @@ import Bottomnnav from './components/Nav/Bottomnav';
 import Player from './components/Music/Player/Player';
 
 // lazy load the component
-/* eslint-disable-next-line */
+
+// eslint-disable-next-line
 const Home = lazy(() => import('./components/Home/Home'));
 const Music = lazy(() => import('./components/Music/Music'));
 const Podcast = lazy(() => import('./components/Music/Podcast/epsodes'));
