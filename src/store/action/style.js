@@ -23,3 +23,8 @@ export const SetPlayerRef = (ref) => (dispatch) => {
 export const showPlayer = (boolean) => (dispatch) => {
     dispatch({ type: 'SHOW_PLAYER', boolean });
 };
+
+export const Buffering = (bool) => (dispatch) => {
+    console.log("Buffering:", bool)
+    dispatch({ type: 'IS_BUFFERING', bool });
+};

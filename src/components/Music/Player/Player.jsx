@@ -3,12 +3,21 @@ import React, { useRef, useState, useEffect } from 'react';
 import AudioPlayer from 'react-h5-audio-player';
 import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
-import { PlaynPause, SetPlayerRef } from '../../../store/action/style';
+import {
+  PlaynPause,
+  SetPlayerRef,
+  Buffering,
+} from '../../../store/action/style';
 import './player.scss';
 import poster512 from '../../../assets/podcast512x512.png';
 import poster256 from '../../../assets/podcast256x256.png';
 
-const Player = ({ playerJson, PlaynPauseFunc, SetPlayerRefFunc }) => {
+const Player = ({
+  playerJson,
+  PlaynPauseFunc,
+  SetPlayerRefFunc,
+  Buffering: Buff,
+}) => {
   const PlayerRef = useRef(null);
   const [display, setDisplay] = useState('none');
 
@@ -91,8 +100,9 @@ const Player = ({ playerJson, PlaynPauseFunc, SetPlayerRefFunc }) => {
         }}
         onPause={() => {
           PlaynPauseFunc(false);
-
-          // SetPlayerRefFunc(PlayerRef);
+        }}
+        onCanPlay={() => {
+          Buff(false);
         }}
         customAdditionalControls={[]}
         customVolumeControls={[]}
@@ -107,6 +117,7 @@ const Player = ({ playerJson, PlaynPauseFunc, SetPlayerRefFunc }) => {
 const mapDispatchToProps = (dispatch) => ({
   PlaynPauseFunc: (bool) => dispatch(PlaynPause(bool)),
   SetPlayerRefFunc: (ref) => dispatch(SetPlayerRef(ref)),
+  Buffering: (bool) => dispatch(Buffering(bool)),
 });
 
 export default connect(null, mapDispatchToProps)(Player);

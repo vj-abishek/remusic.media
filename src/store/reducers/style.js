@@ -2,6 +2,7 @@ const init = {
     is_podcast: false,
     is_playing: false,
     clickMusic: false,
+    is_buffering: true,
 };
 const style = (state = init, action) => {
     switch (action.type) {
@@ -32,6 +33,12 @@ const style = (state = init, action) => {
             return {
                 ...state,
                 showMainPlayer: action.boolean,
+            };
+
+        case 'IS_BUFFERING':
+            return {
+                ...state,
+                is_buffering: false,
             }
         default:
             return state;

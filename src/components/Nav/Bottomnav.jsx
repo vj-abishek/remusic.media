@@ -19,6 +19,7 @@ const Bottomnav = ({
   PlayerRef,
   sPlayer,
   showMainPlayer,
+  isBuffering,
 }) => {
   const showPlayerss = () => {
     window.location.hash = '#music';
@@ -33,6 +34,7 @@ const Bottomnav = ({
         playerJson={playerJson}
         showPlayer={showPlayerss}
         showMainPlayer={showMainPlayer}
+        isBuffering={isBuffering}
       />
       <nav
         style={
@@ -119,6 +121,7 @@ const mapStateToProps = (state) => {
     playerJson: style.player_json,
     PlayerRef: style.PlayerRef,
     showMainPlayer: style.showMainPlayer,
+    isBuffering: style.is_buffering,
   };
 };
 
@@ -146,6 +149,7 @@ Bottomnav.propTypes = {
   }),
   sPlayer: PropTypes.func,
   showMainPlayer: PropTypes.bool,
+  isBuffering: PropTypes.bool,
 };
 
 Bottomnav.defaultProps = {
@@ -156,4 +160,5 @@ Bottomnav.defaultProps = {
   showMainPlayer: false,
   PlayerRef: null,
   sPlayer: PropTypes.func,
+  isBuffering: true,
 };

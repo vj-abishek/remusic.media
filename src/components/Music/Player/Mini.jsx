@@ -9,6 +9,7 @@ export default function Mini({
   PlayerRef,
   showPlayer,
   showMainPlayer,
+  isBuffering,
 }) {
   const handleClick = () => {
     if (!PlayerRef.current) return;
@@ -60,7 +61,7 @@ export default function Mini({
           onClick={showPlayer}
         >
           <span>{playerJson.title}</span>
-          <span>Elisha</span>
+          {isBuffering ? <span>Buffering...</span> : <span>Elisha</span>}
         </button>
         <div className="mini_play_pause">
           <button type="button" className="button" onClick={handleClick}>
@@ -123,6 +124,7 @@ Mini.defaultProps = {
   PlayerRef: null,
   showPlayer: PropTypes.func,
   showMainPlayer: false,
+  isBuffering: true,
 };
 
 Mini.propTypes = {
@@ -142,4 +144,5 @@ Mini.propTypes = {
     current: PropTypes.any,
   }),
   showPlayer: PropTypes.func,
+  isBuffering: PropTypes.bool,
 };
