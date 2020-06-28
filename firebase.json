@@ -6,10 +6,7 @@
     "public": "build",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
-      {
-        "source": "/api/feed",
-        "function": "feed"
-      },
+
       {
         "source": "**",
         "destination": "/index.html"
