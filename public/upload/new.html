@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Upload Your awesome files</title>
+
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <style media="screen">
+    body {
+      background: #eceff1;
+      color: rgba(0, 0, 0, 0.87);
+      font-family: Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    #message {
+      background: white;
+      max-width: 360px;
+      margin: 100px auto 16px;
+      padding: 32px 24px;
+      border-radius: 3px;
+    }
+
+    #message h2 {
+      color: #ffa100;
+      font-weight: bold;
+      font-size: 16px;
+      margin: 0 0 8px;
+    }
+
+    #message h1 {
+      font-size: 22px;
+      font-weight: 300;
+      color: rgba(0, 0, 0, 0.6);
+      margin: 0 0 16px;
+    }
+
+    #message p {
+      line-height: 140%;
+      margin: 16px 0 24px;
+      font-size: 14px;
+    }
+
+    #message a {
+      display: block;
+      text-align: center;
+      background: #039be5;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: white;
+      padding: 16px;
+      border-radius: 4px;
+    }
+
+    #message,
+    #message a {
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    }
+
+    #load {
+      color: rgba(0, 0, 0, 0.4);
+      text-align: center;
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+
+      body,
+      #message {
+        margin-top: 0;
+        background: white;
+        box-shadow: none;
+      }
+
+      body {
+        border-top: 16px solid #ffa100;
+      }
+    }
+
+    /* custome style */
+    .custome {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .loading-me {
+      position: fixed;
+      z-index: 2;
+      top: 0px;
+      display: none;
+      width: 100%;
+      height: 90vh;
+      background-color: rgba(19, 18, 18, 0.7);
+    }
+  </style>
+</head>
+
+<body>
+  <div id="message">
+    <h2>Upload Your Videos!!😍</h2>
+    <div class="row">
+      <form class="col s12" id="form">
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="title" type="text" class="validate" required />
+            <label for="title">Title</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="description" type="text" class="validate" required />
+            <label for="description">Description</label>
+          </div>
+        </div>
+        <div class="file-field input-field">
+          <div class="btn">
+            <span>Thumbnail Photo</span>
+            <input type="file" accept="image/*" id="thumbnail_photo" required />
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text" />
+          </div>
+        </div>
+        <div class="file-field input-field">
+          <div class="btn">
+            <span>Video and mp3</span>
+            <input type="file" id="video" accept="video/*,audio/*" required />
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text" />
+          </div>
+        </div>
+        <button class="btn waves-effect waves-light" type="submit" name="action">
+          Upload
+          <i class="material-icons right">send</i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div class="container custome">
+    <button class="btn " onclick="loginWithGoogle()">
+      Login with Google
+    </button>
+  </div>
+  <p id="load">Firebase SDK Loading&hellip;</p>
+
+  <!-- loading div -->
+
+  <div class="loading-me">
+    <div style="position: absolute;bottom: 50px;width: 100%;height:100px;padding:20px">
+      <h4 id="text">Now Uploading Thumbnail...</h4>
+      <div class="progress">
+        <div class="determinate" id="loads" style="width: 0%"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCpyAOi3zyJHGYNbbe8Mo4UEnzu2b7SVJM",
+    authDomain: "reusicmedia.firebaseapp.com",
+    databaseURL: "https://reusicmedia.firebaseio.com",
+    projectId: "reusicmedia",
+    storageBucket: "reusicmedia.appspot.com",
+    messagingSenderId: "710164836742",
+    appId: "1:710164836742:web:44997b5685501c972abc07",
+    measurementId: "G-V2KHRH9QZZ"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+
+  <script>
+    const main = document.querySelector('#message')
+    const loginWithGoogleComponent = document.querySelector('.container')
+    let provider, storageRef
+    let db, users
+    main.style.display = 'none'
+    main.style.display = 'none'
+    document.addEventListener('DOMContentLoaded', function () {
+      // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+      // // The Firebase SDK is initialized and available here!
+      //
+      firebase.auth().onAuthStateChanged(user => {
+        if (user === null) {
+          loginWithGoogleComponent.style.display = 'flex'
+
+        } else {
+          main.style.display = 'block'
+          loginWithGoogleComponent.style.display = 'none'
+          users = user
+          console.log(user)
+        }
+      })
+      // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+      // firebase.messaging().requestPermission().then(() => { });
+      // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+      //
+      // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+      storageRef = firebase.storage()
+      db = firebase.firestore()
+      try {
+        let app = firebase.app()
+        let features = ['auth', 'database', 'messaging', 'storage'].filter(
+          feature => typeof app[feature] === 'function'
+        )
+        document.getElementById(
+          'load'
+        ).innerHTML = `Firebase SDK loaded with ${features.join(', ')}`
+      } catch (e) {
+        console.error(e)
+        document.getElementById('load').innerHTML =
+          'Error loading the Firebase SDK, check the console.'
+      }
+
+      //testing
+    //   fetch('https://us-central1-music-forest-abigo.cloudfunctions.net/data')
+    //     .then(res => res.json())
+    //     .then(data => console.log(data))
+
+      //login with google
+      provider = new firebase.auth.GoogleAuthProvider()
+    })
+
+    const loginWithGoogle = () => {
+      firebase
+        .auth()
+        .signInWithPopup(provider)
+        .then(function (result) {
+          // This gives you a Google Access Token. You can use it to access the Google API.
+          let token = result.credential.accessToken
+          // The signed-in user info.
+          let user = result.user
+          // ...
+          console.log(user.id)
+        })
+        .catch(function (error) {
+          // Handle Errors here.
+          let errorCode = error.code
+          let errorMessage = error.message
+          // The email of the user's account used.
+          let email = error.email
+          // The firebase.auth.AuthCredential type that was used.
+          let credential = error.credential
+          console.log(error)
+          // ...
+        })
+    }
+  </script>
+  <script src="form.js"></script>
+</body>
+
+</html>
