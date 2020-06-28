@@ -10,7 +10,7 @@ export default function Prompt(props) {
               <img
                 alt=""
                 height="76px"
-                src=" https://remusic.media/logo192.png"
+                src="https://remusic.media/logo192.png"
                 width="76px"
               />
             </div>

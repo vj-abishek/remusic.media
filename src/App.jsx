@@ -5,6 +5,7 @@ import './styles/styles.scss';
 import Nav from './components/Nav/Nav';
 import Bottomnnav from './components/Nav/Bottomnav';
 import Player from './components/Music/Player/Player';
+import Prompt from './components/Helpers/Prompt';
 
 // lazy load the component
 
