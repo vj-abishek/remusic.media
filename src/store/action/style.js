@@ -1,4 +1,4 @@
-export const get = (cond) => (dispatch, state) => {
+export const get = (cond) => (dispatch) => {
     if (cond) {
         dispatch({ type: 'IS_PODACST', is_podcast: true });
     } else {
@@ -6,12 +6,12 @@ export const get = (cond) => (dispatch, state) => {
     }
 };
 
-export const Music = (musicJson) => (dispatch, state) => {
+export const Music = (musicJson) => (dispatch) => {
     console.log('Got in the Action', musicJson);
     dispatch({ type: 'MUSIC_PLAYER', musicJson });
 };
 
-export const PlaynPause = (bool) => (dispatch, state) => {
+export const PlaynPause = (bool) => (dispatch) => {
     console.log('Playing:', bool);
     dispatch({ type: 'PlaynPause', bool });
 };
@@ -22,4 +22,4 @@ export const SetPlayerRef = (ref) => (dispatch) => {
 
 export const showPlayer = (boolean) => (dispatch) => {
     dispatch({ type: 'SHOW_PLAYER', boolean });
-}
+};

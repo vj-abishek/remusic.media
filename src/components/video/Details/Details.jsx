@@ -63,8 +63,8 @@ const Details = ({ single, id, getByid }) => {
   const handShare = async () => {
     const shareData = {
       title: { titles },
-      text: `Watch ${titles} exclusive on only https://remusic.media`,
-      url: `https://remusic.media/watch${id}`,
+      text: `Watch ${titles} on Remusic Media.`,
+      url: `https://remusic.media/watch/${id}`,
     };
     try {
       await navigator.share(shareData);
@@ -73,11 +73,34 @@ const Details = ({ single, id, getByid }) => {
     }
   };
 
+  const mediaSession = () => {
+    // set mediaSession
+    if ('mediaSession' in navigator) {
+      /* eslint-disable-next-line */
+      navigator.mediaSession.metadata = new MediaMetadata({
+        title: titles,
+        artwork: [{ src: poster }],
+      });
+
+      navigator.mediaSession.setActionHandler('play', () => {
+        PlayerRef.current.play();
+      });
+      navigator.mediaSession.setActionHandler('pause', () => {
+        PlayerRef.current.pause();
+      });
+      navigator.mediaSession.setActionHandler('seekbackward', () => {
+        PlayerRef.current.seek(10);
+      });
+      navigator.mediaSession.setActionHandler('seekforward', () => {
+        PlayerRef.current.forward(10);
+      });
+    }
+  };
+
   return loading ? (
     <div
       style={{
-        maxWidth: '680px',
-        maxHeight: '380px',
+        paddingTop: '56%',
         width: '100%',
         background: '#000',
         minHeight: '180px',
@@ -101,29 +124,8 @@ const Details = ({ single, id, getByid }) => {
           className="player-wrapper"
           autoPlay
           src={url}
-          onPlay={() => {
-            // set mediaSession
-            if ('mediaSession' in navigator) {
-              /* eslint-disable-next-line */
-              navigator.mediaSession.metadata = new MediaMetadata({
-                title: titles,
-                artwork: [{ src: poster }],
-              });
-
-              navigator.mediaSession.setActionHandler('play', () => {
-                PlayerRef.current.play();
-              });
-              navigator.mediaSession.setActionHandler('pause', () => {
-                PlayerRef.current.pause();
-              });
-              navigator.mediaSession.setActionHandler('seekbackward', () => {
-                PlayerRef.current.seek(10);
-              });
-              navigator.mediaSession.setActionHandler('seekforward', () => {
-                PlayerRef.current.forward(10);
-              });
-            }
-          }}
+          onPlay={mediaSession}
+          onPause={mediaSession}
         >
           <BigPlayButton position="center" />
           <ControlBar autoHide={false}>
@@ -151,7 +153,7 @@ const Details = ({ single, id, getByid }) => {
               onClick={handShare}
               className="inline_sharing"
             >
-              <div>
+              <span className="icon is-small">
                 <svg
                   fill="#fff"
                   xmlns="http://www.w3.org/2000/svg"
@@ -162,9 +164,9 @@ const Details = ({ single, id, getByid }) => {
                   <path d="M0 0h24v24H0V0z" fill="none" />
                   <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92zM18 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM6 13c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm12 7.02c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z" />
                 </svg>
-              </div>
+              </span>
 
-              <span>Share</span>
+              <div>Share</div>
             </button>
           </div>
         </div>

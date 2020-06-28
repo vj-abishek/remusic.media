@@ -9,6 +9,7 @@ export const primary = () => (dispatch, state) => {
         dispatch({ type: 'FETCH_VIDEOS', data: doc.docs });
     }).catch((error) => {
         console.log('Error getting cached document:', error);
+        dispatch({ type: 'FETCH_ERROR', error })
     });
 };
 

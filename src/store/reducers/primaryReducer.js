@@ -1,7 +1,6 @@
 const init = {
-    thumbnail: 'https://firebasestorage.googleapis.com/v0/b/music-forest-abigo.appspot.com/o/thumbnail_photo%2FPosterMaker_15052020_154545.png?alt=media&token=552628bc-b71c-43d4-954b-7a937c5db524',
-    profile: 'https://lh3.googleusercontent.com/a-/AOh14Gg04wX4fIl8ANF5Ni580t5CNPffSAFW7SN1sqWP-Q',
-    title: 'Ummai Pola Yarundu',
+    loading: true,
+    error: false,
 };
 
 const primaryReducer = (state = init, action) => {
@@ -15,10 +14,11 @@ const primaryReducer = (state = init, action) => {
             };
             const rest = original.filter((_, i) => i > 0);
             return {
+                ...state,
                 data: rest,
                 recent,
                 original,
-                ...state,
+                loading: false,
             };
         }
         case 'GET_VIDEO': {
@@ -27,6 +27,11 @@ const primaryReducer = (state = init, action) => {
                 original: [action.data],
             };
         }
+        case 'FETCH_ERROR':
+            return {
+                ...state,
+                error: true,
+            };
         default:
             return state;
     }

@@ -11,6 +11,8 @@ export default function Mini({
   showMainPlayer,
 }) {
   const handleClick = () => {
+    if (!PlayerRef.current) return;
+
     if (isPlaying) {
       PlayerRef.current.audio.current.pause();
     } else {

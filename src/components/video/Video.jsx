@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import Text from './Text';
 import VideoContainer from './Videocontainer';
+import Spin from '../../Loaders/Spin';
+import Notification from '../Helpers/Notifications';
 import { primary as get } from '../../store/action/primaryActions';
 
 const variants = {
@@ -16,11 +18,18 @@ const variants = {
   },
 };
 
-const Video = ({ createME, data: uploadedVideos, recent }) => {
+const Video = ({ createME, data: uploadedVideos, recent, loading, error }) => {
   useEffect(() => {
     if (!uploadedVideos) createME();
   }, [createME, uploadedVideos]);
-  return (
+  return loading ? (
+    <>
+      {/* Show notification in there is an error */}
+      {console.log(error)}
+      {error && <Notification>Cannot Connect to the internet</Notification>}
+      <Spin value="Almost Done..." />
+    </>
+  ) : (
     <motion.div
       className="container"
       initial="hidden"
@@ -32,6 +41,7 @@ const Video = ({ createME, data: uploadedVideos, recent }) => {
         <link rel="canonical" href="https://remusic.media/" />
       </Helmet>
       <Text>RECENT UPLOADS</Text>
+
       {recent && (
         <motion.div
           initial="hidden"
@@ -84,9 +94,11 @@ const Video = ({ createME, data: uploadedVideos, recent }) => {
 const mapStateToProps = (state) => {
   const { primary } = state;
   return {
+    loading: primary.loading,
     primarys: primary,
     data: primary.data,
     recent: primary.recent,
+    error: primary.error,
   };
 };
 
@@ -99,11 +111,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(Video);
 // TypeChecking
 Video.propTypes = {
   createME: PropTypes.func.isRequired,
-  primarys: PropTypes.shape({
-    thumbnail: PropTypes.string.isRequired,
-    profile: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-  }).isRequired,
   data: PropTypes.arrayOf(
     PropTypes.shape({
       thumbnail_photo: PropTypes.string,
@@ -120,10 +127,14 @@ Video.propTypes = {
     time: PropTypes.number.isRequired,
     id: PropTypes.string.isRequired,
   }),
+  loading: PropTypes.bool,
+  error: PropTypes.bool,
 };
 
 // default proptypes
 Video.defaultProps = {
   data: undefined,
   recent: undefined,
+  loading: false,
+  error: false,
 };

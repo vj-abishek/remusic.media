@@ -9,6 +9,7 @@ const variants = {
 export default function Initial() {
   return (
     <motion.div
+      className="is-loading"
       style={{
         display: 'flex',
         justifyContent: 'center',
@@ -20,8 +21,6 @@ export default function Initial() {
       initial="hidden"
       animate="visible"
       variants={variants}
-    >
-      Loading...
-    </motion.div>
+    />
   );
 }
