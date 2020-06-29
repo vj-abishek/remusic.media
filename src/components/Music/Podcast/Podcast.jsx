@@ -9,6 +9,7 @@ export default function Podcast() {
         <meta charSet="utf-8" />
         <title>Remusic Media - Listen to music and podcast</title>
         <link rel="canonical" href="https://remusic.media/music/" />
+        <link rel="preconnect" href="https://storage.buzzsprout.com" />
       </Helmet>
       <div className="outer">
         <Link to="podcast">

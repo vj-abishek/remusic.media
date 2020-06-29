@@ -39,6 +39,7 @@ const Video = ({ createME, data: uploadedVideos, recent, loading, error }) => {
       <Helmet>
         <title>Remusic Media - Watch videos</title>
         <link rel="canonical" href="https://remusic.media/" />
+        <link rel="preconnect" href="https://storage.googleapis.com" />
       </Helmet>
       <Text>RECENT UPLOADS</Text>
 

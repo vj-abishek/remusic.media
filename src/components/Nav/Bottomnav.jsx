@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Mini from '../Music/Player/Mini';
 import { showPlayer } from '../../store/action/style';
-import Logo from '../../assets/remusic50.png';
+import Logo from '../../assets/remusic50.svg';
 
 const isActive = ({ isCurrent }) => {
   // its okay to have
