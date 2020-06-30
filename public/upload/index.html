@@ -12,7 +12,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
+  <!-- <script src="https://unpkg.com/uuid@latest/dist/umd/uuidv4.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/uuid@latest/dist/umd/uuidv4.min.js"></script>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <style media="screen">
     body {
@@ -281,6 +282,14 @@
         })
     }
   </script>
+  <script>
+    console.log(uuidv4());
+  </script>
+  <!-- <script type="module">
+  import { v4 as uuidv4 } from 'https://jspm.dev/uuid';
+  console.log(uuidv4()); // ⇨ '1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed'
+</script>  -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.2.0/uuid.min.js" integrity="sha256-DHybmPL8nKIsjU2CDfmskgvaV3IK2rtaqyEoH3Dmmf0=" crossorigin="anonymous"></script> -->
   <script src="form.js"></script>
 </body>
 

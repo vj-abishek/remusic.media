@@ -103,12 +103,23 @@ const handleFile = async (path, datas, type) => {
                     load.className = 'indeterminate';
                     data.time = Date.now();
                     data.photoURL = users.photoURL;
-                    db.collection('video_data')
-                        .doc()
-                        .set(data)
-                        .then(() => {
-                            console.log('Document successfully written!');
-                            window.location.href = 'success.html';
+                    db.collection('video')
+                        .add(data)
+                        .then((docRef) => {
+                            console.log(docRef.id);
+                            const docId = docRef.id;
+                            db.collection('video')
+                                .doc(docId)
+                                .set({
+                                    id: docId
+                                }, { merge: true })
+                                .then(() => {
+                                    console.log('Document successfully written!');
+                                    window.location = "/";
+                                })
+                                .catch(err => console.log(err));
+
+                            // window.location.href = 'success.html';
                         })
                         .catch((error) => {
                             console.error('Error writing document: ', error);

@@ -10,9 +10,9 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="1331.6094mm"
-   height="335.38101mm"
-   viewBox="0 0 1331.6094 335.38101"
+   width="1331.6093mm"
+   height="335.38074mm"
+   viewBox="0 0 1331.6093 335.38074"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
@@ -175,16 +175,17 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.087500002"
-     inkscape:cx="2991.2442"
-     inkscape:cy="1444.081"
+     inkscape:cx="2991.2437"
+     inkscape:cy="1444.0805"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="g899"
      showgrid="false"
      inkscape:window-width="1366"
      inkscape:window-height="705"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
-     inkscape:window-maximized="1" />
+     inkscape:window-maximized="1"
+     inkscape:pagecheckerboard="true" />
   <metadata
      id="metadata5">
     <rdf:RDF>
@@ -201,7 +202,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(490.55038,-329.14986)">
+     transform="translate(490.55025,-329.15)">
     <image
        y="19.867865"
        x="-1069.5969"
@@ -377,13 +378,13 @@
     <g
        id="g899">
       <circle
-         style="opacity:1;fill:url(#linearGradient890-4);fill-opacity:1;stroke:#ff80e5;stroke-width:0.45790267"
+         style="opacity:1;fill:url(#linearGradient890-4);fill-opacity:1;stroke:#ff80e5;stroke-width:0.45772398;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke markers fill"
          id="path882-6"
          cx="-522.83075"
          cy="1017.7084"
          inkscape:transform-center-x="22.678571"
-         inkscape:export-xdpi="3.9312863"
-         inkscape:export-ydpi="3.9312863"
+         inkscape:export-xdpi="38.77623"
+         inkscape:export-ydpi="38.77623"
          r="113.82152"
          inkscape:export-filename="A:\remusic.media\src\assets\remusic50.png"
          transform="matrix(1.4703184,0,0,1.4703184,445.86779,-999.51498)" />
