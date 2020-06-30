@@ -63,8 +63,7 @@ const Details = ({ single, id, getByid }) => {
   const handShare = async () => {
     const shareData = {
       title: { titles },
-      text: `Watch ${titles} on Remusic Media.
-      `,
+      text: `Watch ${titles} on Remusic Media.`,
       url: `https://remusic.media/${id}`,
     };
     try {
