@@ -679,7 +679,11 @@ imageCOntainEE img {
     justify-content: center;
   }
 }
-
+@media(max-width : 414px){
+  .video_contaiern_for_blah{
+    min-width:414px;
+  }
+}
 @media (max-width: 425px) {
   *{
     outline: none;
@@ -694,7 +698,24 @@ imageCOntainEE img {
     font-size: 22px;
     margin-left: -5px;
   }
+ 
 }
+@media(max-width: 411px){
+  .video_contaiern_for_blah{
+    min-width:411px;
+  }
+}
+@media(max-width: 375px){
+  .video_contaiern_for_blah{
+    min-width:375px;
+  }
+}
+@media(max-width: 360px){
+  .video_contaiern_for_blah{
+    min-width:360px;
+  }
+}
+
 
 @media (max-width: 320px) {
   *{
@@ -765,7 +786,7 @@ imageCOntainEE img {
     margin-left: 0px;
   }
   .video_contaiern_for_blah {
-    max-width: 100%;
+    max-width: 768px;
   }
   .margin {
     margin: 0px;
